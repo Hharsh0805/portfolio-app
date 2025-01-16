@@ -1,0 +1,102 @@
+/* Contact Container */
+.contact-container {
+  font-family: "Poppins", sans-serif; /* Simplified font-family */
+  display: flex;
+  justify-content: space-between;
+  margin-top: 100px;
+  padding: 20px;
+  text-align: left;
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+/* Heading Styles */
+.contact-container h2 {
+  font-weight: bold;
+  margin-bottom: 20px; /* Added bottom margin for spacing */
+}
+
+/* Contact Form Styles */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1; /* Allows form to grow and take available space */
+}
+
+/* Input and Textarea Styles */
+.contact-form input,
+.contact-form textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem; /* Added font-size for consistency */
+}
+
+/* Button Styles */
+.contact-form button {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  font-size: 1rem; /* Consistent button font size */
+  transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.contact-form button:hover {
+  background-color: #0056b3;
+}
+
+/* Contact Info Styles */
+.contact-info {
+  margin-top: 20px;
+  flex: 1; /* Allows contact info to grow and take available space */
+}
+
+.info {
+  margin-top: 40px;
+  margin-left: 20px;
+}
+
+.info p {
+  margin-left: 50px;
+}
+
+/* Social Icons Styles */
+.social-icons {
+  margin-left: 20px;
+  display: flex; /* Flexbox for icon alignment */
+  gap: 10px; /* Spacing between icons */
+}
+
+.social-icons a {
+  display: inline-block;
+  transition: transform 0.3s ease;
+  text-decoration: none; /* Ensures no underline on links */
+}
+
+.social-icons a:hover {
+  transform: scale(1.2);
+  background: linear-gradient(to right, #05385d, #4b036d);
+  border-radius: 50%; /* Add round corners for a better look */
+}
+
+/* Map Styles */
+.map {
+  flex: 0 0 60%; /* Adjust width to 60% */
+  min-width: 300px; /* Minimum width for better layout */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .contact-container {
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center align on smaller screens */
+  }
+
+  .map {
+    flex: 1 1 100%; /* Full width on smaller screens */
+    min-width: 100%; /* Ensure map takes full width */
+  }
+}

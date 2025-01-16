@@ -1,0 +1,195 @@
+:root {
+  --bg-light: #ffffff;
+  --bg-dark: #1a202c;
+  --text-light: #ffffff;
+  --text-dark: #2d3748;
+  --primary: #4f9a94;
+  --hover: #357f77;
+  --carousel-gradient: radial-gradient(circle at center, rgba(0, 0, 0, 0.2) 1%, transparent 80%),
+    radial-gradient(circle at top left, rgba(0, 0, 0, 0.1) 1%, transparent 70%),
+    linear-gradient(135deg, rgba(0, 0, 0, 0.05) 25%, transparent 25%),
+    linear-gradient(225deg, rgba(0, 0, 0, 0.05) 25%, transparent 25%);
+  background-size: 50px 50px, 50px 50px, 10px 10px, 10px 10px;
+  background-color: #121212; /* Carousel gradient */
+}
+
+[data-theme='dark'] {
+  --bg-light: #1a202c;
+  --bg-dark: #ffffff;
+  --text-light: #2d3748;
+  --text-dark: #ffffff;
+}
+
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  color: var(--text-dark); /* Default text color */
+  background-color: var(--bg-light);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Header styles */
+.header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 50;
+  background: var(--carousel-gradient); /* Initial gradient background */
+  transition: background-color 0.3s, box-shadow 0.3s, color 0.3s; /* Smooth color transitions */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  color: var(--text-light); /* Default header text color */
+}
+
+.header.scrolled {
+  background-color: var(--bg-light); /* Background changes to white on scroll */
+  color: var(--text-dark); /* Text color changes to black */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Title color change on scroll */
+.header .title {
+  transition: color 0.3s ease;
+}
+
+.header .scrolled-title {
+  color: var(--text-dark); /* Title text changes to black on scroll */
+}
+
+.header-container {
+  max-width: 12000px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Nav Links */
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: inherit; /* Inherit color from header */
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: var(--primary);
+}
+
+.nav-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.button.primary {
+  background-color: var(--primary);
+  color: var(--text-light);
+}
+
+.button.primary:hover {
+  background-color: var(--hover);
+}
+
+.theme-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Mobile Menu */
+.mobile-menu {
+  background-color: var(--bg-light);
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.mobile-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.mobile-link {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 0;
+  text-decoration: none;
+  color: inherit; /* Inherit color from header */
+  transition: color 0.3s ease, background-color 0.3s ease;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.mobile-link:hover {
+  color: var(--primary);
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.mobile-contact {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.mobile-theme-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: inherit; /* Inherit color from header */
+}
+
+.hidden-md {
+  display: none;
+}
+
+.md-only {
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .hidden-md {
+    display: flex;
+  }
+  .md-only {
+    display: none;
+  }
+}

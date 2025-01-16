@@ -1,0 +1,81 @@
+.about-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+/* About Me Section */
+.about-me {
+  margin-bottom: 2.5rem;
+}
+
+.about-me h1 {
+  font-size: 2.5rem;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+.about-me-text {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #34495e;
+  text-align: justify;
+}
+
+/* Skills & Interests Section */
+.skills-interests {
+  margin-bottom: 2.5rem;
+}
+
+.skills-interests h2 {
+  font-size: 2rem;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+.skills-text {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #34495e;
+  margin-bottom: 1rem;
+  text-align: justify;
+}
+
+/* General Headings */
+.headings {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  border-bottom: 2px solid #3498db;
+  padding-bottom: 0.3rem;
+  display: inline-block;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .about-container {
+    padding: 1rem;
+  }
+
+  .about-me h1,
+  .skills-interests h2 {
+    font-size: 2rem;
+  }
+
+  .about-me-text,
+  .skills-text {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .headings {
+    font-size: 1.8rem;
+  }
+
+  .about-me-text,
+  .skills-text {
+    font-size: 0.9rem;
+  }
+}
