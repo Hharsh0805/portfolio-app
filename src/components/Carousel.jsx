@@ -8,7 +8,7 @@ import {
   Binary, Hash, Box
 } from 'lucide-react'
 
-import './carousel.css';
+import './Carousel.css';
 
 const slides = [
   {
