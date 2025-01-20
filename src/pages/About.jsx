@@ -1,4 +1,6 @@
-import React from 'react';
+'use client'
+
+import React, { useState, useEffect } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Skills from '../components/Skills1';
@@ -7,9 +9,30 @@ import Resume from '../components/Resume';
 import './About.css';
 
 const About = () => {
+  const [darkMode, setDarkMode] = useState(false);
+
+  useEffect(() => {
+    const savedMode = localStorage.getItem('darkMode');
+    if (savedMode !== null) {
+      setDarkMode(JSON.parse(savedMode));
+    } else {
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      setDarkMode(prefersDark);
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem('darkMode', JSON.stringify(darkMode));
+    if (darkMode) {
+      document.documentElement.classList.add('dark'); // Ensure dark class is applied to <html>
+    } else {
+      document.documentElement.classList.remove('dark'); // Remove dark class
+    }
+  }, [darkMode]);
+
   return (
-    <div className="about">
-      <Header />
+    <div className={`about ${darkMode ? 'dark' : ''}`}>
+      <Header darkMode={darkMode} setDarkMode={setDarkMode} isAboutPage={true} />
       <main className="about-container">
         {/* About Me Section */}
         <section className="about-me">

@@ -1,0 +1,35 @@
+.floating-icons-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+  }
+  
+  .floating-icon {
+    position: absolute;
+    animation: float linear infinite;
+    transform: translate(-50%, -50%);
+  }
+  
+  @keyframes float {
+    0% {
+      transform: translate(0, 0) rotate(0deg);
+    }
+    25% {
+      transform: translate(30px, 30px) rotate(90deg);
+    }
+    50% {
+      transform: translate(-30px, -30px) rotate(180deg);
+    }
+    75% {
+      transform: translate(20px, -40px) rotate(270deg);
+    }
+    100% {
+      transform: translate(0, 0) rotate(360deg);
+    }
+  }
+  

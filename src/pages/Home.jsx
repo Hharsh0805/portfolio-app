@@ -1,4 +1,4 @@
-"use client"
+'use client'
 
 import React, { useState, useEffect } from "react"
 import "./global.css"
@@ -8,6 +8,7 @@ import Carousel from "../components/Carousel"
 import Skills from "../components/Skills"
 import RecentPosts from "../components/RecentPosts"
 import Footer from "../components/Footer"
+import FloatingIcons from "../components/FloatingIcons"
 
 export default function Home() {
   const [darkMode, setDarkMode] = useState(false)
@@ -29,6 +30,7 @@ export default function Home() {
 
   return (
     <main className={`min-h-screen flex flex-col ${darkMode ? "dark" : ""}`}>
+      <FloatingIcons darkMode={darkMode} />
       <Header darkMode={darkMode} setDarkMode={setDarkMode} />
       <Carousel />
       <Skills />
@@ -37,4 +39,3 @@ export default function Home() {
     </main>
   )
 }
-
