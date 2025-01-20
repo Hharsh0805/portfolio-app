@@ -1,16 +1,35 @@
-import React from 'react';
-import './global.css';
-import './Home.css';
-import Header from '../components/Header';
-import Carousel from '../components/Carousel';
-import Skills from '../components/Skills';
-import RecentPosts from '../components/RecentPosts';
-import Footer from '../components/Footer';
-import { motion } from 'framer-motion';
+"use client"
+
+import React, { useState, useEffect } from "react"
+import "./global.css"
+import "./Home.css"
+import Header from "../components/Header"
+import Carousel from "../components/Carousel"
+import Skills from "../components/Skills"
+import RecentPosts from "../components/RecentPosts"
+import Footer from "../components/Footer"
+
 export default function Home() {
+  const [darkMode, setDarkMode] = useState(false)
+
+  useEffect(() => {
+    const savedMode = localStorage.getItem("darkMode")
+    if (savedMode !== null) {
+      setDarkMode(JSON.parse(savedMode))
+    } else {
+      const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches
+      setDarkMode(prefersDark)
+    }
+  }, [])
+
+  useEffect(() => {
+    localStorage.setItem("darkMode", JSON.stringify(darkMode))
+    document.documentElement.classList.toggle("dark", darkMode)
+  }, [darkMode])
+
   return (
-    <main className="min-h-screen flex flex-col bg-white dark:bg-gray-900 transition-colors duration-300">
-      <Header />
+    <main className={`min-h-screen flex flex-col ${darkMode ? "dark" : ""}`}>
+      <Header darkMode={darkMode} setDarkMode={setDarkMode} />
       <Carousel />
       <Skills />
       <RecentPosts />
@@ -18,3 +37,4 @@ export default function Home() {
     </main>
   )
 }
+
