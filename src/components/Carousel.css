@@ -2,22 +2,19 @@
   position: relative;
   height: 100vh;
   overflow: hidden;
-  background: linear-gradient(to bottom, #0f2027, #203a43, #2c5364); /* Dark gradient background */
+  background: linear-gradient(to bottom, #0f2027, #203a43, #2c5364);
   color: white;
-  /* margin-left: 300px;
-  margin-right: 300px; */
 }
 
 .carousel-background {
   position: absolute;
   inset: 0;
   background: radial-gradient(circle at center, rgba(0, 0, 0, 0.2) 1%, transparent 80%),
-            radial-gradient(circle at top left, rgba(0, 0, 0, 0.1) 1%, transparent 70%),
-            linear-gradient(135deg, rgba(0, 0, 0, 0.05) 25%, transparent 25%),
-            linear-gradient(225deg, rgba(0, 0, 0, 0.05) 25%, transparent 25%);
-background-size: 50px 50px, 50px 50px, 10px 10px, 10px 10px;
-background-color: #121212;
-
+    radial-gradient(circle at top left, rgba(0, 0, 0, 0.1) 1%, transparent 70%),
+    linear-gradient(135deg, rgba(0, 0, 0, 0.05) 25%, transparent 25%),
+    linear-gradient(225deg, rgba(0, 0, 0, 0.05) 25%, transparent 25%);
+  background-size: 50px 50px, 50px 50px, 10px 10px, 10px 10px;
+  background-color: #121212;
   z-index: 0;
   pointer-events: none;
 }
@@ -34,7 +31,6 @@ background-color: #121212;
 }
 
 .carousel-content {
-  margin-left: 50px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -53,14 +49,14 @@ background-color: #121212;
 }
 
 .heading {
-  font-size: 3.5rem;
+  font-size: clamp(2rem, 5vw, 3.5rem);
   font-weight: bold;
   color: #ffffff;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
 }
 
 .description {
-  font-size: 1.5rem;
+  font-size: clamp(1rem, 2vw, 1.5rem);
   color: #d1d1d1;
   margin-top: 1rem;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
@@ -73,7 +69,7 @@ background-color: #121212;
 .button {
   padding: 0.75rem 1.5rem;
   border-radius: 0.5rem;
-  font-size: 1rem;
+  font-size: clamp(0.875rem, 1.5vw, 1rem);
   font-weight: bold;
   text-decoration: none;
   transition: background-color 0.3s, transform 0.3s;
@@ -112,11 +108,13 @@ background-color: #121212;
 
 .image-container img {
   max-height: 500px;
+  max-width: 100%;
   object-fit: contain;
   filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.6));
 }
 
-.prev, .next {
+.prev,
+.next {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -127,7 +125,8 @@ background-color: #121212;
   transition: background-color 0.3s, transform 0.3s;
 }
 
-.prev:hover, .next:hover {
+.prev:hover,
+.next:hover {
   background: rgba(55, 71, 79, 1);
   transform: scale(1.1);
 }
@@ -166,6 +165,7 @@ background-color: #121212;
   background: #4f9a94;
   transform: scale(1.2);
 }
+
 @keyframes float {
   0% {
     transform: translate(0, 0) rotate(0deg);
@@ -186,3 +186,83 @@ background-color: #121212;
   position: absolute;
   z-index: 1;
 }
+
+@media (max-width: 1024px) {
+  .carousel-content {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .text-container,
+  .image-container {
+    width: 100%;
+    text-align: center;
+  }
+
+  .image-container {
+    margin-top: 2rem;
+  }
+
+  .button-group {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .button {
+    margin: 0.5rem;
+  }
+
+  .button.secondary {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .carousel-content {
+    padding: 1rem;
+  }
+
+  .heading {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+  }
+
+  .description {
+    font-size: clamp(0.875rem, 1.5vw, 1.25rem);
+  }
+
+  .image-container img {
+    max-height: 300px;
+  }
+
+  .prev,
+  .next {
+    padding: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .button-group {
+    flex-direction: column;
+  }
+
+  .button {
+    width: 100%;
+    margin: 0.5rem 0;
+  }
+
+  .prev,
+  .next {
+    padding: 0.5rem;
+  }
+
+  .dots {
+    bottom: 0.5rem;
+  }
+
+  .dot {
+    width: 10px;
+    height: 10px;
+  }
+}
+
