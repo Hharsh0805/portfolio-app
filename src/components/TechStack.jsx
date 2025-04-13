@@ -1,10 +1,10 @@
 import React from 'react';
-import './Skills1.css';
+import './TechStack.css';
 
-const Skills = () => {
+const TechStack = () => {
   return (
     <section className="skills-section">
-      <h2>Tech Stack</h2>
+      {/* <h2>Tech Stack</h2> */}
       <div className="skills-grid">
         {/* Programming Languages and Frameworks */}
         <a href="https://reactjs.org/" target="_blank" rel="noreferrer" className="skill-item">
@@ -132,4 +132,4 @@ const Skills = () => {
   );
 };
 
-export default Skills;
+export default TechStack;

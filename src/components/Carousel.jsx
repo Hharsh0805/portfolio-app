@@ -32,7 +32,8 @@ const slides = [
   {
     textHeading: 'Prolific Tech Blogger',
     description: 'I share insights on the latest web development trends, best practices, and innovative solutions. Join me in exploring the ever-evolving world of technology and software engineering.',
-    img: 'https://images.pexels.com/photos/851213/pexels-photo-851213.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+    // img: 'https://images.pexels.com/photos/851213/pexels-photo-851213.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+    img: '/images/carousel3.png',
     buttons: [
       { text: 'Read Blog', link: '/blogs' },
       { text: 'Subscribe', link: '/subscribe' }

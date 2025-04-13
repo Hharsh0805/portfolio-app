@@ -11,11 +11,11 @@ const Projects = () => {
       demo: 'https://food-delivery-demo.com' // Replace with your actual live demo link
     },
     {
-      title: 'Task Management App',
-      description: 'A React-based task manager with drag-and-drop functionality and real-time updates.',
-      image: 'https://images.unsplash.com/photo-1540350394557-8d14678e7f91?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1632&q=80',
-      github: 'https://github.com/Hharsh0805/task-manager', // Your GitHub link for Task Management App
-      demo: 'https://task-manager-demo.com' // Replace with your actual live demo link
+      title: 'Galera',
+      description: 'Galera is a sleek real estate app for browsing and listing properties, built with Next.js and TypeScript.',
+      image: '/images/galera.png',
+      github: 'https://github.com/Hharsh0805/task-managehttps://github.com/Hharsh0805/Gallera', // Your GitHub link for Task Management App
+      demo: 'https://real-estate-xi-sooty.vercel.app/' // Replace with your actual live demo link
     },
     {
       title: 'Personal Portfolio Website',

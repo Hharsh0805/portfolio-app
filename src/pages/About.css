@@ -53,15 +53,14 @@
   display: inline-block;
 }
 
-/* Dark Mode Styles */
-body.dark .about-me h1,
-body.dark .skills-interests h2 {
+html.dark .about-me h1,
+html.dark .skills-interests h2 {
   color: #ecf0f1; /* Lighter color for headings in dark mode */
 }
 
-body.dark .about-me-text,
-body.dark .skills-text {
-  color: #bdc3c7; /* Slightly lighter color for 
+html.dark .about-me-text,
+html.dark .skills-text {
+  color: #bdc3c7; /* Lighter color for text in dark mode */
 }
 
 /* Responsive Design */
@@ -90,5 +89,4 @@ body.dark .skills-text {
   .skills-text {
     font-size: 0.9rem;
   }
-}
 }

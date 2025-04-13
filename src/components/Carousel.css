@@ -35,7 +35,7 @@
   justify-content: space-between;
   align-items: center;
   height: 100%;
-  padding: 2rem;
+  padding: 3rem;
   z-index: 10;
 }
 
@@ -113,8 +113,8 @@
   filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.6));
 }
 
-.prev,
-.next {
+/* .prev, */
+/* .next {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -123,9 +123,9 @@
   border-radius: 50%;
   cursor: pointer;
   transition: background-color 0.3s, transform 0.3s;
-}
+} */
 
-.prev:hover,
+/* .prev:hover,
 .next:hover {
   background: rgba(55, 71, 79, 1);
   transform: scale(1.1);
@@ -137,7 +137,7 @@
 
 .next {
   right: 1rem;
-}
+} */
 
 .dots {
   position: absolute;

@@ -3,10 +3,11 @@
 import React, { useState, useEffect } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import Skills from '../components/Skills1';
+// import TechStack from '../components/TechStack';
 import Projects from '../components/Projects';
 import Resume from '../components/Resume';
 import './About.css';
+import TechStack from '../components/TechStack';
 
 const About = () => {
   const [darkMode, setDarkMode] = useState(false);
@@ -52,10 +53,10 @@ const About = () => {
           <p className="skills-text">
             I have a wide range of interests, including reading books and interacting with financial experts and advisors to broaden my knowledge. I enjoy listening to podcasts on business, nature, and wildlife. Traveling is something I love, and I engage in sports like cricket, table tennis, and chess. As a music listener, I find joy in discovering new tunes, and I also love spending time playing with dogs.
           </p>
+          <h2 className='headings'>Tech Stack</h2>
+          
         </section>
-
-        {/* Components for Additional Content */}
-        <Skills />
+        <TechStack />
         <Projects />
         <Resume />
       </main>
